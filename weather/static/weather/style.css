@@ -15,7 +15,8 @@ h1{
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: cadetblue;
+    background-color: aliceblue;
+    /* background-color: skyblue; */
 }
 
 .container::before {
@@ -48,8 +49,8 @@ h1{
 
 .weatherHeader{
     width: -webkit-fill-available;
-    height: 45%;
-    /* height: 160%; */
+    /* height: 45%; */
+    height: 160%;
     display: flex;
     justify-content: center;
 }
@@ -65,7 +66,7 @@ h1{
 
 .weatherButton{
     background-color: transparent;
-    color: white;
+    color: black;
     border: none;
     cursor: pointer;
 }
@@ -77,7 +78,7 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: purple;
+    color: rgb(44, 148, 189);
     background-color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
