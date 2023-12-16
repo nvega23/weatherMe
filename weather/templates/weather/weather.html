@@ -4,21 +4,40 @@
     <head>
         <title>Weather</title>
         <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="container">
-            <h1>Weather Information</h1>
-            <form method="GET" action="">
-                <input type="text" name="city" id="weatherCity" placeholder="Enter a city name"/>
-                <button type="submit">Get Weather</button>
-            </form>
-            {% if error_message %}
-                <p>{{ error_message }}</p>
-            {% else %}
-                <p>{{city}}<p/>
-                <p>Temperature: {{ temperature }} °F</p>
-                <p>Description: {{ description }}</p>
-            {% endif %}
+            <div class="getWeatherForm">
+                <form method="GET" action="" class="myForm">
+                    <button type="submit" class="weatherButton" 
+                    {% comment %} onclick="toggleSearchField()" {% endcomment %}
+                    >
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <input type="text" name="city" id="weatherCity" placeholder="Enter a city name"
+                     />
+                </form>
+            </div>
+            <div class="cardContainer">
+                <div class="weatherHeader">
+                    <h1>{{city}}</h1>
+                </div>
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% else %}
+                    <div class="weatherDescription">
+                        <p>{{ temperature }} °F</p>
+                        <p>Description: {{ description }}</p>
+                    </div>
+                {% endif %}
+            <div/>
         <div/>
+        {% comment %} <script>
+            function toggleSearchField() {
+                var weatherCity = document.getElementById("weatherCity");
+                weatherCity.style.display = (weatherCity.style.display === 'none' || weatherCity.style.display === '') ? 'block' : 'none';
+            }
+        </script> {% endcomment %}
     </body>
 </html>

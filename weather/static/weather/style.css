@@ -4,12 +4,99 @@ body{
     height: 99vh;
 }
 
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
+    background-color: cadetblue;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    backdrop-filter: blur(10vh); /* Adjust the blur intensity as needed */
+    z-index: -1;
+}
+
+.cardContainer{
+    border: 1px solid white;
+    box-shadow: -5px 5px 10px #00000082;
+    border-radius: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75vh;
+    width: 50vh;
+    z-index: 1;
     background-image: url("https://images.unsplash.com/photo-1533324268742-60b233802eef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80");
-    background: contain;
+    background-size: cover; /* Adjust the background size as needed */
+    position: relative;
+}
+
+.weatherHeader{
+    width: -webkit-fill-available;
+    height: 45%;
+    /* height: 160%; */
+    display: flex;
+    justify-content: center;
+}
+
+.getWeatherForm{
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 5vh;
+}
+
+.weatherButton{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.weatherDescription{
+    width: -webkit-fill-available;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: purple;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: larger;
+    border-radius: inherit;
+}
+
+#weatherCity{
+    border-radius: 5vh;
+    border: none;
+    width: 25vh;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.myForm{
+    display: flex;
+    flex-direction: row-reverse;
 }
