@@ -1,43 +1,45 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Weather</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="getWeatherForm">
-                <form method="GET" action="" class="myForm">
-                    <button type="submit" class="weatherButton" 
-                    {% comment %} onclick="toggleSearchField()" {% endcomment %}
-                    >
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <input type="text" name="city" id="weatherCity" placeholder="Enter a city name"
-                     />
-                </form>
+<head>
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'weather/style.css' %}">
+    {% comment %} <link rel="icon" href="./weather/assets/icons8-summer.gif" type="image/gif"> {% endcomment %}
+    <link rel="icon" href="{% static 'weather/assets/icons8-summer-48.png' %}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="getWeatherForm">
+            <form method="GET" action="" class="myForm">
+                <button type="submit" class="weatherButton">
+                    <i class="fa fa-search"></i>
+                </button>
+                <input type="text" name="city" id="weatherCity" placeholder="Enter a city name" />
+            </form>
+        </div>
+        <div class="cardContainer">
+            <div class="weatherHeader">
+                <h1>{{city}}</h1>
             </div>
-            <div class="cardContainer">
-                <div class="weatherHeader">
-                    <h1>{{city}}</h1>
+            <div class="forcastContainer">
+                {% for forecast in forecasts %}
+                <div class="forecastItem">
+                    <p>{{ forecast.day_name }}</p>
+                    <p>{{ forecast.average_temperature }} °F</p>
+                    <p>{{ forecast.description }}</p>
                 </div>
-                {% if error_message %}
-                    <p>{{ error_message }}</p>
-                {% else %}
-                    <div class="weatherDescription">
-                        <p>{{ temperature }} °F</p>
-                        <p>Description: {{ description }}</p>
-                    </div>
-                {% endif %}
-            <div/>
-        <div/>
-        {% comment %} <script>
-            function toggleSearchField() {
-                var weatherCity = document.getElementById("weatherCity");
-                weatherCity.style.display = (weatherCity.style.display === 'none' || weatherCity.style.display === '') ? 'block' : 'none';
-            }
-        </script> {% endcomment %}
-    </body>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% comment %}
+    <script>
+        function toggleSearchField() {
+            var weatherCity = document.getElementById("weatherCity");
+            weatherCity.style.display = (weatherCity.style.display === 'none' || weatherCity.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+    {% endcomment %}
+</body>
 </html>
