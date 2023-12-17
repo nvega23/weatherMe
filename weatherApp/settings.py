@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'weatherme-3y1m.onrender.com',
     'www.weatherme-3y1m.onrender.com',
+    '127.0.0.1',
 ]
 
 
