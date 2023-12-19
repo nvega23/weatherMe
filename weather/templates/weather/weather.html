@@ -25,9 +25,9 @@
             <div class="forcastContainer">
                 {% for forecast in forecasts %}
                 <div class="forecastItem">
-                    <p>{{ forecast.day_name }}</p>
-                    <p>{{ forecast.average_temperature }} °F</p>
-                    <p>{{ forecast.description }}</p>
+                    <p class="foreDay">{{ forecast.day_name }}</p>
+                    <p class="tempItem">{{ forecast.average_temperature }} °F</p>
+                    <p class="foreDes">{{ forecast.description }}</p>
                 </div>
                 {% endfor %}
             </div>

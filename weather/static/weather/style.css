@@ -39,12 +39,9 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 75vh;
+    height: 85vh;
     width: 50vh;
     z-index: 1;
-    background-image: url("https://images.unsplash.com/photo-1533324268742-60b233802eef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80");
-    background-size: cover; /* Adjust the background size as needed */
-    position: relative;
 }
 
 .weatherHeader{
@@ -53,6 +50,10 @@ h1{
     height: 160%;
     display: flex;
     justify-content: center;
+    background-image: url("https://images.unsplash.com/photo-1533324268742-60b233802eef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80");
+    background-size: cover; /* Adjust the background size as needed */
+    position: relative;
+    border-radius: inherit;
 }
 
 .getWeatherForm{
@@ -126,4 +127,24 @@ h1{
     width: -webkit-fill-available;
     height: -webkit-fill-available;
     margin: 2vh;
+}
+
+.tempItem{
+    display: flex;
+    /* border: 3px solid black; */
+    width: inherit;
+    justify-content: end;
+}
+
+.foreDay{
+    display: flex;
+    /* border: 3px solid black; */
+    width: inherit;
+}
+
+.foreDes{
+    display: flex;
+    /* border: 3px solid black; */
+    width: inherit;
+    justify-content: end;
 }
