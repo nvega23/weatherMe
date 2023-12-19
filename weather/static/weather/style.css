@@ -46,8 +46,8 @@ h1{
 
 .weatherHeader{
     width: -webkit-fill-available;
-    height: inherit;
-    /* height: 160%; */
+    /* height: inherit; */
+    height: 160%;
     display: flex;
     justify-content: center;
     background-image: url("https://images.unsplash.com/photo-1533324268742-60b233802eef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80");
@@ -74,7 +74,7 @@ h1{
 
 .weatherDescription{
     width: -webkit-fill-available;
-    height: inherit;
+    height: min-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,7 +83,7 @@ h1{
     background-color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: larger;
+    font-size: 12px;
     border-radius: inherit;
 }
 
@@ -115,7 +115,7 @@ h1{
     background-color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
-    font-size: 15px;
+    font-size: 12px;
     border-radius: inherit;
 }
 
@@ -126,7 +126,7 @@ h1{
     flex-direction: row;
     width: -webkit-fill-available;
     height: -webkit-fill-available;
-    margin: 2vh;
+    margin: 1vh;
 }
 
 .tempItem{
