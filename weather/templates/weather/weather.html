@@ -29,12 +29,6 @@
                     <p class="foreDay">{{ forecast.day_name }}</p>
                     <p class="tempItem">{{ forecast.average_temperature }} °F</p>
                     <p class="foreDes">
-{% comment %} broken clouds
-overcast clouds
-overcast clouds
-broken clouds
-clear sky
-scattered clouds {% endcomment %}
                         {% if 'clear sky' in forecast.description|lower %}
                             <i class="fa fa-sun-o"></i>
                         {% elif 'clouds' in forecast.description|lower %}
